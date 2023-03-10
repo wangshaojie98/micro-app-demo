@@ -7,12 +7,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:main": "pnpm -C packages/react-app-main start",
     "start:sub1": "pnpm -C packages/react-app-sub1 start",
-    "start:sub2": "pnpm -C packages/react-app-sub2 start"
+    "start:sub2": "pnpm -C packages/react-app-sub2 start",
+    "start:all": "node ./run.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/testing-library__jest-dom": "^5.14.5"
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1",
+    "shelljs": "^0.8.5"
+  },
+  "dependencies": {
+    "qiankun": "^2.10.3",
+    "react-router-dom": "^6.8.2"
   }
 }

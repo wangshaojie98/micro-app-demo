@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './registerMicroApp'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Nav } from '@/layout'
+import routes from '@/router'
 
-function App() {
+type AppPropsType = {
+  basePath?: string
+}
+declare const window: {__POWERED_BY_QIANKUN__: boolean}
+
+function App(props: AppPropsType) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router basename={window.__POWERED_BY_QIANKUN__ ? props?.basePath : '/'}>
+      <div className="App">
+        <Nav routes={routes} />
+        <div id="pageContainer" className="page-container">
+          <Routes>
+            {routes.map(({ name, path, component: C }) => (
+              <Route key={name} path={path} element={<C />} />
+            ))}
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
