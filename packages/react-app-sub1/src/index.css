@@ -24,7 +24,7 @@ li {
   background-color: #f7f7f7;
   overflow: auto;
   position: fixed;
-  top: 0;
+  top: 300;
   height: 50px;
 }
 
@@ -56,5 +56,5 @@ li {
 
 .page-container {
   text-align: left;
-  margin-top: 50px;
+  margin-top: 350px;
 }

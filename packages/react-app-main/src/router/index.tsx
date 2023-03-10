@@ -13,12 +13,12 @@ const routers: TypeRoutes[] = [
   },
   {
     name: 'Sub1',
-    path: '/Sub1',
+    path: '/child/Sub1',
     component: Sub1
   },
   {
     name: 'Sub2',
-    path: '/Sub2',
+    path: '/child/Sub2',
     component: Sub2
   },
 ]

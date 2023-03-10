@@ -1,4 +1,3 @@
-import './registerMicroApp'
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Nav } from '@/layout'
@@ -10,9 +9,10 @@ type AppPropsType = {
 declare const window: {__POWERED_BY_QIANKUN__: boolean}
 
 function App(props: AppPropsType) {
+  console.log('props: ', props);
   return (
     <Router basename={window.__POWERED_BY_QIANKUN__ ? props?.basePath : '/'}>
-      <div className="App">
+      <div className="root">
         <Nav routes={routes} />
         <div id="pageContainer" className="page-container">
           <Routes>
